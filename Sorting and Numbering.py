@@ -114,7 +114,7 @@ def sort_features_by_coordinate(feature_dict, direction='x', ascending=False, st
     return sorted_feature_dict
 
 
-def main_script(parcels_fc, unique_id_field, start_count, numbering_field, direction, ascending):
+def sorting_and_numbering(parcels_fc, unique_id_field, start_count, numbering_field, direction, ascending):
 
     gdb_path = get_gdb_path_of_layer(parcels_fc)
 
@@ -169,4 +169,4 @@ if __name__ == '__main__':
     elif direction == 'Down to Up':
         direction, ascending = 'y', True
 
-    main_script(parcels_fc, unique_id_field, start_count, numbering_field, direction, ascending)
+    sorting_and_numbering(parcels_fc, unique_id_field, start_count, numbering_field, direction, ascending)
