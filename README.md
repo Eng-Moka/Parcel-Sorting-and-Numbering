@@ -39,4 +39,4 @@ start_count = 1
 numbering_field = "Parcel_Number"
 direction = "Left to Right"
 
-main_script(parcels_fc, unique_id_field, start_count, numbering_field, direction)
+sorting_and_numbering(parcels_fc, unique_id_field, start_count, numbering_field, direction)
