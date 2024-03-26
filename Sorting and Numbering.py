@@ -143,8 +143,7 @@ def sorting_and_numbering(parcels_fc, unique_id_field, start_count, numbering_fi
         arcpy.AddError(f"Field '{numbering_field}' not found in the feature class.")
         return
     field_type = field_obj.type
-
-    # Create the domain based on field type
+    
     if field_type not in ['String', 'Date','Double','Integer','FLOAT','LONG','SHORT']:
         print(f"Invalid field type '{field_type}'.")
         arcpy.AddError(f"Invalid field type '{field_type}'.")
