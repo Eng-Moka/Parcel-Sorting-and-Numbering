@@ -144,7 +144,7 @@ def sorting_and_numbering(parcels_fc, unique_id_field, start_count, numbering_fi
         return
     field_type = field_obj.type
     
-    if field_type not in ['String', 'Date','Double','Integer','FLOAT','LONG','SHORT']:
+    if field_type.lower() not in ['string', 'text','double','integer','float','long','short']:
         print(f"Invalid field type '{field_type}'.")
         arcpy.AddError(f"Invalid field type '{field_type}'.")
         return
@@ -153,11 +153,11 @@ def sorting_and_numbering(parcels_fc, unique_id_field, start_count, numbering_fi
 
 
 if __name__ == '__main__':
-    parcels_fc = arcpy.GetParameterAsText(0)  # Input
+    parcels_fc = arcpy.GetParameterAsText(0)  
     unique_id_field = arcpy.GetParameterAsText(1)
-    start_count = arcpy.GetParameterAsText(2)   # Input
-    numbering_field = arcpy.GetParameterAsText(3)  # Input
-    direction = arcpy.GetParameterAsText(4)   # Input
+    start_count = arcpy.GetParameterAsText(2)   
+    numbering_field = arcpy.GetParameterAsText(3)  
+    direction = arcpy.GetParameterAsText(4)   
 
     if direction == 'Left to Right':
         direction, ascending = 'x', True
